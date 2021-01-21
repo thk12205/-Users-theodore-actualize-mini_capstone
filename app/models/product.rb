@@ -1,5 +1,10 @@
 class Product < ApplicationRecord
 
+  #comment out later for working on app
+  validates :name, presence: true, uniqueness: true
+  validates :description, length: {in: 10..500}
+
+
   # id: product.id,
   # name: product.name,
   # price: product.price,
@@ -7,15 +12,14 @@ class Product < ApplicationRecord
   # description: product.description
 
   def is_discounted?
-    return true if price < 10
-    return false
+    price < 10
   end
 
   def tax
-    return price * 0.09
+    price * 0.09
   end
 
   def total
-    return price + tax
+    price + tax
   end
 end
