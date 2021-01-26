@@ -1,3 +1,0 @@
-{
-  message: "product: #{@name} item id: #{@id} has been destroyed."
-}
